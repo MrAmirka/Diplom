@@ -1,0 +1,28 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>images/3131068.jpg</file>
+        <file>images/cropped-кузнец.jpg</file>
+        <file>MainMenu.qml</file>
+        <file>images/list.png</file>
+        <file>images/profile.png</file>
+        <file>images/qestion.png</file>
+        <file>images/search.png</file>
+        <file>ProfileMenu.qml</file>
+        <file>images/param.png</file>
+        <file>ProfileSwipeMenu.qml</file>
+        <file>Authorised.qml</file>
+        <file>images/Котик.png</file>
+        <file>DownHLayout.qml</file>
+        <file>Course.qml</file>
+        <file>images/doc.png</file>
+        <file>images/scan.png</file>
+        <file>images/set.png</file>
+        <file>images/way.png</file>
+        <file>ScanMenu.qml</file>
+        <file>images/sb.png</file>
+        <file>Settings.qml</file>
+        <file>Documents.qml</file>
+        <file>ScanAdvanced.qml</file>
+    </qresource>
+</RCC>
