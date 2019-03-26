@@ -6,25 +6,37 @@ Item {
     width: 563
     height: 1000
 
+    FontLoader
+    {
+        id: roboto
+        source: "fonts/Roboto-Light.ttf"
+    }
+    FontLoader
+    {
+        id: robotoReg
+        source: "fonts/Roboto-Regular.ttf"
+    }
+
     Rectangle{
         id: rectangle
         anchors.fill: parent
         color: "white"
 
         Rectangle{
-            x: 132
-            y: 350
+            x: parent.width/2 - width/2
+            y: parent.height * 0.6
             width: 300
             height: 300
-            radius: 150
+            radius: height * 0.5
             color: "#FF5F00"
 
             Text {
                 id: textFirst
                 x: 70
                 y: 120
-                text: qsTr("Начать")
+                text: "Начать"
                 font.pixelSize: 50
+                font.family: roboto.name
                 color:"white"
             }
 
@@ -62,18 +74,20 @@ Item {
     Text {
         id: element1
         x: parent.width/2-width/2
-        y: 860
-        width: 400
-        text: qsTr("Поднесите устройство к NFC метке")
+        y: parent.height*0.922
+        text: "Поднесите устройство к NFC метке"
+        font.family: robotoReg.name
+        font.styleName: Font.Light
         font.pixelSize: 25
         opacity: 0.5
     }
     Text {
         id: element2
         x: parent.width/2-width/2
-        y: 895
-        text: qsTr("Дата последнего сканирования: 24.03.2019")
-        font.pixelSize: 15
+        y: parent.height*0.95
+        text: "Дата последнего сканирования: 24.03.2019"
+        font.family: roboto.name
+        font.pixelSize: 20
         opacity: 0.5
     }
 }

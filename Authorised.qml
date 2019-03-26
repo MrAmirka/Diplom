@@ -1,4 +1,4 @@
-    import QtQuick 2.0
+import QtQuick 2.0
 import QtQuick.Controls 2.1
 
 Item {
@@ -25,14 +25,26 @@ Item {
         width:parent.width
         height: parent.height/2.75
         color: "#FF5F00"
-        Text{
-            text:"Профиль"
-            font.family: "Maryweather"
-            font.pointSize: 15
+        FontLoader
+        {
+            id: roboto
+            source: "fonts/Roboto-Light.ttf"
+        }
+        FontLoader
+        {
+            id: robotoReg
+            source: "fonts/Roboto-Regular.ttf"
+        }
+
+        Text
+        {
+            text: "Профиль"
+            font.family: roboto.name
+            font.weight: Font.Light   // this is necessary or else it'll look like Roboto-Bold
             x:parent.width/25
             y:parent.height/25
-            color:"white"
-            opacity:0.9
+            color: "white"
+            font.pointSize: 15
         }
         Rectangle {
             id:rect
@@ -46,24 +58,32 @@ Item {
                 source: "images/Котик.png"
             }
         }
-        Text{
-            text:"Иван"
+
+        Text
+        {
+            text: "Иван"
+            font.family: robotoReg.name
+            font.weight: Font.Light
             x: parent.width/2-width/2
             y: parent.height/2
+            color: "white"
             font.pointSize: 20
-            color:"white"
         }
         Text{
             text:"Инженер по наладке II степени"
+            font.family: roboto.name
+            font.weight: Font.Light
             x: parent.width/2-width/2
             y: parent.height/1.6
-            font.pointSize: 10
+            font.pointSize: 12
             color:"white"
         }
 
     }
     Text{
         text:"О Вас"
+        font.family: robotoReg.name
+        font.weight: Font.Light
         x:parent.width/25
         y:parent.height/2.7
         color:"black"
@@ -71,38 +91,48 @@ Item {
     }
     Text{
         text:"Возраст: 35 лет"
+        font.family: roboto.name
+        font.weight: Font.Light
         x: parent.width/9
         y: parent.height/2.45
-        font.pointSize: 10
+        font.pointSize: 12
         color:"black"
         opacity:0.7
     }
     Text{
         text:"Стаж: 7 лет 2 месяца"
+        font.family: roboto.name
+        font.weight: Font.Light
         x: parent.width/9
         y: parent.height/2.25
-        font.pointSize: 10
+        font.pointSize: 12
         color:"black"
         opacity:0.7
     }
     Text{
         text:"Дней отпуска накоплено: 33"
+        font.family: roboto.name
+        font.weight: Font.Light
         x: parent.width/9
         y: parent.height/2.09
-        font.pointSize: 10
+        font.pointSize: 12
         color:"black"
         opacity:0.7
     }
     Text{
         text:"Интересы: котики"
+        font.family: roboto.name
+        font.weight: Font.Light
         x: parent.width/9
         y: parent.height/1.95
-        font.pointSize: 10
+        font.pointSize: 12
         color:"black"
         opacity:0.7
     }
     Text{
         text:"Контактная информация"
+        font.family: robotoReg.name
+        font.weight: Font.Light
         x:parent.width/25
         y:parent.height/1.8
         color:"black"
@@ -110,17 +140,21 @@ Item {
     }
     Text{
         text:"+7(909)888-22-55"
+        font.family: roboto.name
+        font.weight: Font.Light
         x: parent.width/9
         y: parent.height/1.67
-        font.pointSize: 10
+        font.pointSize: 12
         color:"black"
         opacity:0.7
     }
     Text{
         text:"ivan@corporativemail.ru"
+        font.family: roboto.name
+        font.weight: Font.Light
         x: parent.width/9
         y: 634
-        font.pointSize: 10
+        font.pointSize: 12
         color:"black"
         opacity:0.7
     }
@@ -129,8 +163,24 @@ Item {
         x: 23
         y: 664
         text:"Изменить пароль"
+        font.family: robotoReg.name
+        font.weight: Font.Light
         color:"black"
         font.pointSize: 15
+
+        MouseArea {
+            anchors.fill: parent;
+            anchors.margins: 8;
+            onPressed: parent.scale = 0.9
+            onReleased: parent.scale = 1
+            //onClicked:{mainStack.push("Authorised.qml")}
+
+        }
+        Behavior on scale {
+            PropertyAnimation{
+                duration: 100
+            }
+        }
     }
 
     Text {
@@ -138,6 +188,8 @@ Item {
         y: 700
         color: "#000000"
         text: "О программе"
+        font.family: robotoReg.name
+        font.weight: Font.Light
         font.pointSize: 15
     }
 
@@ -146,8 +198,24 @@ Item {
         y: 742
         color: "#000000"
         text: "Условия использования"
-        font.pointSize: 10
+        font.family: roboto.name
+        font.weight: Font.Light
+        font.pointSize: 12
         opacity: 0.7
+
+        MouseArea {
+            anchors.fill: parent;
+            anchors.margins: 8;
+            onPressed: parent.scale = 0.9
+            onReleased: parent.scale = 1
+            //onClicked:{mainStack.push("Authorised.qml")}
+
+        }
+        Behavior on scale {
+            PropertyAnimation{
+                duration: 100
+            }
+        }
     }
 
     Text {
@@ -155,8 +223,24 @@ Item {
         y: 770
         color: "#000000"
         text: "Конфиденциальность"
-        font.pointSize: 10
+        font.family: roboto.name
+        font.weight: Font.Light
+        font.pointSize: 12
         opacity: 0.7
+
+        MouseArea {
+            anchors.fill: parent;
+            anchors.margins: 8;
+            onPressed: parent.scale = 0.9
+            onReleased: parent.scale = 1
+            //onClicked:{mainStack.push("Authorised.qml")}
+
+        }
+        Behavior on scale {
+            PropertyAnimation{
+                duration: 100
+            }
+        }
     }
 
     Text {
@@ -164,8 +248,24 @@ Item {
         y: 798
         color: "#000000"
         text: "Версия ПО"
-        font.pointSize: 10
+        font.family: roboto.name
+        font.weight: Font.Light
+        font.pointSize: 12
         opacity: 0.7
+
+        MouseArea {
+            anchors.fill: parent;
+            anchors.margins: 8;
+            onPressed: parent.scale = 0.9
+            onReleased: parent.scale = 1
+            //onClicked:{mainStack.push("Authorised.qml")}
+
+        }
+        Behavior on scale {
+            PropertyAnimation{
+                duration: 100
+            }
+        }
     }
 }
 

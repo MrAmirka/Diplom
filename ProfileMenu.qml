@@ -13,11 +13,23 @@ Item {
         height:parent.height
 
     }
+
+    FontLoader
+    {
+        id: roboto
+        source: "fonts/Roboto-Regular.ttf"
+    }
+    FontLoader
+    {
+        id: robotoLight
+        source: "fonts/Roboto-Light.ttf"
+    }
+
     Text {                              //Заголовок
         id: title
         text: qsTr("Авторизуйтесь")
         color: "white"
-        font.family: "Helvetica Thin"
+        font.family: roboto.name
         font.pointSize: 40
         opacity:0.9
         x:parent.width/2-width/2
@@ -27,7 +39,8 @@ Item {
         x: 246
         y: 457                               //Текст перед 1-м полем ввода
         text:"Вход"
-        font.family: "Helvetica CE"
+        font.family: robotoLight.name
+        font.styleName: Font.Light
         font.pointSize: 20
         color:"white"
         opacity:0.9
@@ -50,7 +63,7 @@ Item {
             wrapMode: TextInput.WrapAnywhere;
 
             text: focus ? "" : "  Login";
-            font.family: "Helvetica"
+            font.family: robotoLight.name
             opacity: 0.85
         }
     }
@@ -72,7 +85,7 @@ Item {
             wrapMode: TextInput.WrapAnywhere;
 
             text: focus ? "" : "  Password";
-            font.family: "Helvetica"
+            font.family: robotoLight.name
             opacity: 0.85
         }
     }
@@ -100,11 +113,11 @@ Item {
             PropertyAnimation{
                 duration: 100
             }
-
         }
+
         Text{
             text:"ВОЙТИ"
-            font.family: "Helvetica"
+            font.family: robotoLight.name
             font.pointSize: 20
             x:parent.width/2-width/2
             y:parent.height/2-height/2

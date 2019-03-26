@@ -17,6 +17,12 @@ Item {
 
     }
 
+    FontLoader
+    {
+        id: roboto
+        source: "fonts/Roboto-Regular.ttf"
+    }
+
     Rectangle{
         x: 0
         y: 5
@@ -57,6 +63,7 @@ Item {
                     width: 59
                     height: 12
                     text: qsTr("Параметры")
+                    font.family: roboto.name
                     font.pixelSize: 12
                 }
             }
@@ -95,6 +102,7 @@ Item {
                     x: -12
                     y: 31
                     text: qsTr("Маршрут")
+                    font.family: roboto.name
                     font.pixelSize: 12
                 }
             }
@@ -135,6 +143,7 @@ Item {
                     width: 59
                     height: 12
                     text: qsTr("Сканировать")
+                    font.family: roboto.name
                     font.pixelSize: 12
                 }
             }
@@ -175,6 +184,7 @@ Item {
                     width: 59
                     height: 12
                     text: qsTr("Документы")
+                    font.family: roboto.name
                     font.pixelSize: 12
                 }
             }
@@ -215,6 +225,7 @@ Item {
                     width: 59
                     height: 12
                     text: qsTr("Профиль")
+                    font.family: roboto.name
                     font.pixelSize: 12
                 }
             }

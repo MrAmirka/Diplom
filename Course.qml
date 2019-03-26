@@ -5,6 +5,17 @@ Item {
     width: 563
     height: 1000
 
+    FontLoader
+    {
+        id: roboto
+        source: "fonts/Roboto-Light.ttf"
+    }
+    FontLoader
+    {
+        id: robotoReg
+        source: "fonts/Roboto-Regular.ttf"
+    }
+
     Rectangle{
         anchors.fill:parent
         color: "white"
@@ -24,10 +35,6 @@ Item {
             x: 43
             y: 271
             radius: 0.12*height
-            gradient: Gradient{
-                GradientStop{ position:0.0; color:"black"}
-                GradientStop{ position:1.1; color: "white"}
-            }
         }
 
         Image{//Сборочный
@@ -61,6 +68,20 @@ Item {
             anchors.fill: sb
             source: sb
             maskSource: rectangleMask
+
+            MouseArea {
+                anchors.fill: parent;
+                anchors.margins: 8;
+                onPressed: parent.scale = 0.9
+                onReleased: parent.scale = 1
+                //onClicked:{mainStack.push("Authorised.qml")}
+
+            }
+            Behavior on scale {
+                PropertyAnimation{
+                    duration: 100
+                }
+            }
         }
 
         Rectangle{
@@ -76,7 +97,8 @@ Item {
                 id: header
                 x: 649
                 y: 1360
-                text: qsTr("Маршрут")
+                text: "Маршрут"
+                font.family: robotoReg.name
                 font.pixelSize: 40
                 color:"white"
             }
@@ -86,7 +108,8 @@ Item {
             id: elementFirst
             x: 43
             y: 229
-            text: qsTr("СБОРОЧНЫЙ ЦЕХ")
+            text: "СБОРОЧНЫЙ ЦЕХ"
+            font.family: robotoReg.name
             font.pixelSize: 20
             opacity: 0.7
         }
@@ -95,9 +118,56 @@ Item {
             id: elementSecond
             x: 43
             y: 433
-            text: qsTr("СБОРОЧНЫЙ ЦЕХ")
+            text: "ПОКРАСОЧНЫЙ ЦЕХ"
             font.pixelSize: 20
             opacity: 0.7
+        }
+
+        Image{//Окрасочный
+            height: 150
+            width: 300
+            id: okr
+            x: 43
+            y: 480
+            source: "images/okr.jpg"
+            antialiasing: true
+            visible: false
+        }
+
+        Rectangle{
+            id: rectangleMask2
+            anchors.fill: okr
+            radius: 0.12*height
+            anchors.rightMargin: 0
+            anchors.bottomMargin: 0
+            anchors.leftMargin: 0
+            anchors.topMargin: 0
+            visible: false
+        }
+
+        OpacityMask{
+            id: opacityMask2
+            anchors.rightMargin: 0
+            anchors.bottomMargin: 0
+            anchors.leftMargin: 0
+            anchors.topMargin: 0
+            anchors.fill: okr
+            source: okr
+            maskSource: rectangleMask
+
+            MouseArea {
+                anchors.fill: parent;
+                anchors.margins: 8;
+                onPressed: parent.scale = 0.9
+                onReleased: parent.scale = 1
+                //onClicked:{mainStack.push("Authorised.qml")}
+
+            }
+            Behavior on scale {
+                PropertyAnimation{
+                    duration: 100
+                }
+            }
         }
 
 

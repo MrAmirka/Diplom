@@ -4,6 +4,17 @@ Item {
     width: 563
     height: 1000
 
+    FontLoader
+    {
+        id: roboto
+        source: "fonts/Roboto-Light.ttf"
+    }
+    FontLoader
+    {
+        id: robotoReg
+        source: "fonts/Roboto-Regular.ttf"
+    }
+
     Rectangle{
         anchors.fill:parent
         color: "white"
@@ -30,7 +41,8 @@ Item {
                 id: header
                 x: 649
                 y: 1360
-                text: qsTr("Настройки")
+                text: "Настройки"
+                font.family: robotoReg.name
                 font.pixelSize: 40
                 color:"white"
             }
@@ -41,6 +53,7 @@ Item {
             x: 43
             y: 229
             text: qsTr("Параметр 1")
+            font.family: roboto.name
             font.pixelSize: 20
             opacity: 0.7
         }
