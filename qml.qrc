@@ -10,7 +10,6 @@
         <file>images/search.png</file>
         <file>ProfileMenu.qml</file>
         <file>images/param.png</file>
-        <file>ProfileSwipeMenu.qml</file>
         <file>Authorised.qml</file>
         <file>images/Котик.png</file>
         <file>DownHLayout.qml</file>
@@ -29,5 +28,6 @@
         <file>fonts/Roboto-Light.ttf</file>
         <file>fonts/Roboto-Regular.ttf</file>
         <file>images/okr.jpg</file>
+        <file>AssemblyShop.qml</file>
     </qresource>
 </RCC>

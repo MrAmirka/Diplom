@@ -6,17 +6,6 @@ Item {
     width: 563
     height: 1000
 
-    FontLoader
-    {
-        id: roboto
-        source: "fonts/Roboto-Light.ttf"
-    }
-    FontLoader
-    {
-        id: robotoReg
-        source: "fonts/Roboto-Regular.ttf"
-    }
-
     Rectangle{
         id: rectangle
         anchors.fill: parent

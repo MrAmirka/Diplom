@@ -5,44 +5,25 @@ Item {
     width: 563
     height: 1000
 
-    FontLoader
-    {
-        id: roboto
-        source: "fonts/Roboto-Light.ttf"
-    }
-    FontLoader
-    {
-        id: robotoReg
-        source: "fonts/Roboto-Regular.ttf"
-    }
-
     Rectangle{
         anchors.fill:parent
         color: "white"
         DownHLayout{
             id: downHLayout
             x: 0
-            y: 945
+            y: parent.height*0.945
             height: parent.height/12
             anchors.bottom: parent.bottom
             anchors.bottomMargin: -28
             width:parent.width
         }
 
-        Rectangle{//Shadow
-            height:150
-            width:300
-            x: 43
-            y: 271
-            radius: 0.12*height
-        }
-
         Image{//Сборочный
-            height: 150
-            width: 300
+            height:parent.height*0.15
+            width:parent.width*0.532
             id:sb
-            x: 43
-            y: 267
+            x: parent.width*0.076
+            y: parent.height*0.267
             source: "images/sb.png"
             antialiasing: true
             visible: false
@@ -74,7 +55,7 @@ Item {
                 anchors.margins: 8;
                 onPressed: parent.scale = 0.9
                 onReleased: parent.scale = 1
-                //onClicked:{mainStack.push("Authorised.qml")}
+                onClicked:{mainStack.push("AssemblyShop.qml")}
 
             }
             Behavior on scale {
@@ -93,21 +74,22 @@ Item {
             radius:0.5*height
             color: "#FF5F00"
 
-            Text {
-                id: header
-                x: 649
-                y: 1360
-                text: "Маршрут"
-                font.family: robotoReg.name
-                font.pixelSize: 40
-                color:"white"
-            }
+
         }
 
         Text {
+            id: header
+            x: parent.width/2 - width/2
+            y: parent.height/11
+            text: "Маршрут"
+            font.family: roboto.name
+            font.pixelSize: 40
+            color:"white"
+        }
+        Text {
             id: elementFirst
-            x: 43
-            y: 229
+            x: parent.width*0.0763
+            y: parent.height*0.229
             text: "СБОРОЧНЫЙ ЦЕХ"
             font.family: robotoReg.name
             font.pixelSize: 20
@@ -116,19 +98,20 @@ Item {
 
         Text {
             id: elementSecond
-            x: 43
-            y: 433
-            text: "ПОКРАСОЧНЫЙ ЦЕХ"
+            x: parent.width*0.0763
+            y: parent.height*0.433
+            text: "СВАРОЧНЫЙ ЦЕХ"
+            font.family: robotoReg.name
             font.pixelSize: 20
             opacity: 0.7
         }
 
         Image{//Окрасочный
-            height: 150
-            width: 300
+            height:parent.height*0.15
+            width:parent.width*0.532
             id: okr
-            x: 43
-            y: 480
+            x: parent.width*0.0763
+            y: parent.height*0.480
             source: "images/okr.jpg"
             antialiasing: true
             visible: false

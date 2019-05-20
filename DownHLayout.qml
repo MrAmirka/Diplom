@@ -1,8 +1,8 @@
 import QtQuick 2.0
 
 Item {
-    width: 563
-    height: 55
+    //width: 563
+    //height: 55
     //property int  horizontalSpacer: width/20
     //property int verticalSpacer: height/6
 
@@ -15,12 +15,6 @@ Item {
             GradientStop{ position:0.0; color: "white"}
         }
 
-    }
-
-    FontLoader
-    {
-        id: roboto
-        source: "fonts/Roboto-Regular.ttf"
     }
 
     Rectangle{

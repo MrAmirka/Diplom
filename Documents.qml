@@ -4,20 +4,10 @@ Item {
     width: 563
     height: 1000
 
-    FontLoader
-    {
-        id: roboto
-        source: "fonts/Roboto-Light.ttf"
-    }
-    FontLoader
-    {
-        id: robotoReg
-        source: "fonts/Roboto-Regular.ttf"
-    }
-
     Rectangle{
         anchors.fill:parent
         color: "white"
+
         DownHLayout{
             id: downHLayout
             x: 0
@@ -32,31 +22,64 @@ Item {
             id:upperRound
             x: -454
             y: -1286
-            height:1500
-            width:1500
+            height:parent.height*1.5
+            width:parent.width*2.66
             radius:0.5*height
             color: "#FF5F00"
+        }
 
-            Text {
-                id: header
-                x: 649
-                y: 1360
-                text: "Документы"
-                font.family: robotoReg.name
-                font.pixelSize: 40
-                color:"white"
-            }
+        Text {
+            id: header
+            x: parent.width/2 - width/2
+            y: parent.height/11
+            text: "Документы"
+            font.family: roboto.name
+            font.pixelSize: 40
+            color:"white"
         }
 
         Text {
             id: elementFirst
-            x: 43
-            y: 229
-            text: qsTr("Документ")
+            x: parent.width*0.0763
+            y: parent.height*0.25
+            text: qsTr("Методические указания к проверке
+конвейерного механизма")
+            font.family: roboto.name
             font.pixelSize: 20
             opacity: 0.7
         }
 
+        Text {
+            id: elementSecond
+            x: parent.width*0.0763
+            y: parent.height*0.32
+            text: qsTr("Акт проверки
+конвейерного механизма")
+            font.family: roboto.name
+            font.pixelSize: 20
+            opacity: 0.7
+        }
 
+        Text {
+            id: elementThird
+            x: parent.width*0.0763
+            y: parent.height*0.39
+            text: qsTr("Журнал технического состояния
+на сложное оборудование")
+            font.family: roboto.name
+            font.pixelSize: 20
+            opacity: 0.7
+        }
+
+        Text {
+            id: elementFourth
+            x: parent.width*0.0763
+            y: parent.height*0.46
+            text: qsTr("Журнал дефектов
+и неполадок")
+            font.family: roboto.name
+            font.pixelSize: 20
+            opacity: 0.7
+        }
     }
 }

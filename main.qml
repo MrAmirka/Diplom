@@ -4,16 +4,27 @@ import QtQuick.Controls 2.2
 
 ApplicationWindow {
     visible: true
-    width: 563
-    height: 1000
     title: qsTr("Diploma")
-    property double rowHeight: (height*10)/100
-    //property double columnWidth: (width*10)/100
+    property int propWidth: 563
+    property int propHeight: 1000
+    width: propWidth
+    height: propHeight
+
+    FontLoader
+    {
+        id: roboto
+        source: "fonts/Roboto-Light.ttf"
+    }
+    FontLoader
+    {
+        id: robotoReg
+        source: "fonts/Roboto-Regular.ttf"
+    }
 
     DownHLayout{
         id: downHLayout
         x: 0
-        y: 945
+        y: parent.height*0.945
         height: parent.height/12
         anchors.bottom: parent.bottom
         anchors.bottomMargin: -28
@@ -22,12 +33,13 @@ ApplicationWindow {
 
     StackView{
         id:mainStack
+        initialItem: profileMenu
         anchors.bottomMargin: 89
         anchors.fill: parent
 
-    ProfileMenu{
-        id:profileMenu
-    }
+        ProfileMenu{
+            id:profileMenu
+        }
     }
 }
 

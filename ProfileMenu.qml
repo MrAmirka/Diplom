@@ -11,18 +11,6 @@ Item {
         source: "images/3131068.jpg"
         x:-200
         height:parent.height
-
-    }
-
-    FontLoader
-    {
-        id: roboto
-        source: "fonts/Roboto-Regular.ttf"
-    }
-    FontLoader
-    {
-        id: robotoLight
-        source: "fonts/Roboto-Light.ttf"
     }
 
     Text {                              //Заголовок
@@ -33,13 +21,13 @@ Item {
         font.pointSize: 40
         opacity:0.9
         x:parent.width/2-width/2
-        y:10
+        y:parent.height*0.01
     }
     Text{
-        x: 246
-        y: 457                               //Текст перед 1-м полем ввода
+        x: parent.width/2-width/2
+        y: parent.height*0.452          //Текст перед 1-м полем ввода
         text:"Вход"
-        font.family: robotoLight.name
+        font.family: roboto.name
         font.styleName: Font.Light
         font.pointSize: 20
         color:"white"
@@ -48,7 +36,7 @@ Item {
     Rectangle                           //Поле ввода логина
     {
         width: parent.width/2;
-        height: 30;
+        height: parent.height*0.03;
         border.color: "grey";
         border.width: 1;
         radius: 15
@@ -62,15 +50,15 @@ Item {
             anchors.margins: 8;
             wrapMode: TextInput.WrapAnywhere;
 
-            text: focus ? "" : "  Login";
-            font.family: robotoLight.name
+            text: focus ? "" : "Login";
+            font.family: roboto.name
             opacity: 0.85
         }
     }
     Rectangle                           //Поле ввода пароля
     {
         width: parent.width/2;
-        height: 30;
+        height: parent.height*0.03;
         border.color: "grey";
         border.width: 1;
         radius: 15
@@ -84,8 +72,8 @@ Item {
             anchors.margins: 8;
             wrapMode: TextInput.WrapAnywhere;
 
-            text: focus ? "" : "  Password";
-            font.family: robotoLight.name
+            text: focus ? "" : "Password";
+            font.family: roboto.name
             opacity: 0.85
         }
     }
@@ -93,7 +81,7 @@ Item {
     {
         id: enterButton
         width: parent.width/2;
-        height: 50;
+        height: parent.height*0.05;
         border.color: "grey";
         border.width: 1;
         radius: 15
@@ -106,7 +94,7 @@ Item {
             anchors.margins: 8;
             onPressed: parent.scale = 0.9
             onReleased: parent.scale = 1
-            onClicked:{mainStack.push("Authorised.qml")}
+            onClicked:{validator.getHash(textLogin.text, textPassword.text); mainStack.push("Authorised.qml")}
 
         }
         Behavior on scale {
@@ -117,7 +105,7 @@ Item {
 
         Text{
             text:"ВОЙТИ"
-            font.family: robotoLight.name
+            font.family: roboto.name
             font.pointSize: 20
             x:parent.width/2-width/2
             y:parent.height/2-height/2

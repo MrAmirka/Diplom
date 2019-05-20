@@ -13,7 +13,7 @@ Item {
     DownHLayout{
         id: downHLayoutAuth
         x: 0
-        y: 945
+        y: parent.height*0.945
         height: parent.height/12
         anchors.bottom: parent.bottom
         anchors.bottomMargin: -28
@@ -25,16 +25,6 @@ Item {
         width:parent.width
         height: parent.height/2.75
         color: "#FF5F00"
-        FontLoader
-        {
-            id: roboto
-            source: "fonts/Roboto-Light.ttf"
-        }
-        FontLoader
-        {
-            id: robotoReg
-            source: "fonts/Roboto-Regular.ttf"
-        }
 
         Text
         {
@@ -153,15 +143,15 @@ Item {
         font.family: roboto.name
         font.weight: Font.Light
         x: parent.width/9
-        y: 634
+        y: parent.height*0.634
         font.pointSize: 12
         color:"black"
         opacity:0.7
     }
 
     Text{
-        x: 23
-        y: 664
+        x: parent.width*0.04
+        y: parent.height*0.664
         text:"Изменить пароль"
         font.family: robotoReg.name
         font.weight: Font.Light
@@ -184,8 +174,8 @@ Item {
     }
 
     Text {
-        x: 23
-        y: 700
+        x: parent.width*0.04
+        y: parent.height*0.7
         color: "#000000"
         text: "О программе"
         font.family: robotoReg.name
@@ -194,8 +184,8 @@ Item {
     }
 
     Text {
-        x: 63
-        y: 742
+        x: parent.width*0.1119
+        y: parent.height*0.742
         color: "#000000"
         text: "Условия использования"
         font.family: roboto.name
@@ -219,8 +209,8 @@ Item {
     }
 
     Text {
-        x: 63
-        y: 770
+        x: parent.width*0.1119
+        y: parent.height*0.77
         color: "#000000"
         text: "Конфиденциальность"
         font.family: roboto.name
@@ -244,8 +234,8 @@ Item {
     }
 
     Text {
-        x: 63
-        y: 798
+        x: parent.width*0.1119
+        y: parent.height*0.798
         color: "#000000"
         text: "Версия ПО"
         font.family: roboto.name
