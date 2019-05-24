@@ -2,9 +2,9 @@ import QtQuick 2.0
 import QtQuick.Controls 2.1
 
 Item {
-    width: 563
-    height: 1000
-    //anchors.fill:parent
+
+    height: propHeight
+    width:propWidth
     Rectangle{
         anchors.fill: parent
         color:"white"

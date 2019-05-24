@@ -1,8 +1,8 @@
 import QtQuick 2.0
 
 Item {
-    width: 563
-    height: 1000
+    height: propHeight
+    width:propWidth
 
     Rectangle{
         anchors.fill:parent
@@ -47,6 +47,19 @@ Item {
             font.family: roboto.name
             font.pixelSize: 20
             opacity: 0.7
+
+            MouseArea {
+                anchors.fill: parent;
+                anchors.margins: 8;
+                onPressed: parent.scale = 0.9
+                onReleased: parent.scale = 1
+                onClicked: mainStack.push("Doc.qml")
+            }
+            Behavior on scale {
+                PropertyAnimation{
+                    duration: 100
+                }
+            }
         }
 
         Text {

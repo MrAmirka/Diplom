@@ -21,15 +21,7 @@ ApplicationWindow {
         source: "fonts/Roboto-Regular.ttf"
     }
 
-    DownHLayout{
-        id: downHLayout
-        x: 0
-        y: parent.height*0.945
-        height: parent.height/12
-        anchors.bottom: parent.bottom
-        anchors.bottomMargin: -28
-        width:parent.width
-    }
+
 
     StackView{
         id:mainStack

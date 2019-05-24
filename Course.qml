@@ -2,12 +2,13 @@ import QtQuick 2.0
 import QtGraphicalEffects 1.0
 
 Item {
-    width: 563
-    height: 1000
+    height: propHeight
+    width:propWidth
 
     Rectangle{
         anchors.fill:parent
         color: "white"
+
         DownHLayout{
             id: downHLayout
             x: 0
@@ -55,7 +56,8 @@ Item {
                 anchors.margins: 8;
                 onPressed: parent.scale = 0.9
                 onReleased: parent.scale = 1
-                onClicked:{mainStack.push("AssemblyShop.qml")}
+                onClicked:{mainStack.push("AssemblyShop.qml")
+                    sb.opacity = 0.5}
 
             }
             Behavior on scale {
@@ -81,16 +83,27 @@ Item {
             id: header
             x: parent.width/2 - width/2
             y: parent.height/11
-            text: "Маршрут"
+            text: "Индивидуальный маршрут"
             font.family: roboto.name
             font.pixelSize: 40
             color:"white"
         }
+
+        Text {
+            id: headerLower
+            x: parent.width/2 - width/2
+            y: parent.height/7.5
+            text: "на 08.06.2019"
+            font.family: roboto.name
+            font.pixelSize: 22
+            color:"white"
+        }
+
         Text {
             id: elementFirst
             x: parent.width*0.0763
             y: parent.height*0.229
-            text: "СБОРОЧНЫЙ ЦЕХ"
+            text: "ЦЕХ ОБЩЕЙ СБОРКИ"
             font.family: robotoReg.name
             font.pixelSize: 20
             opacity: 0.7

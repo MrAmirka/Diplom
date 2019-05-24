@@ -5,10 +5,11 @@ Item {
     //height: 55
     //property int  horizontalSpacer: width/20
     //property int verticalSpacer: height/6
-
+    width:parent.width
+    height:parent.height*0.055
     Rectangle{
+        color: "#000000"
         anchors.fill: parent
-        anchors.bottomMargin: 41
         opacity: 1
         gradient: Gradient{
             GradientStop{ position:1.0; color:"black"}
@@ -19,10 +20,10 @@ Item {
 
     Rectangle{
         x: 0
-        y: 5
+        y: parent.height*0.005
 
-        width: 563
-        height: 50
+        width: propWidth
+        height: propHeight*0.050
         color: "white"
         visible: true
         Image {

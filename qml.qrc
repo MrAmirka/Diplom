@@ -29,5 +29,7 @@
         <file>fonts/Roboto-Regular.ttf</file>
         <file>images/okr.jpg</file>
         <file>AssemblyShop.qml</file>
+        <file>Doc.qml</file>
+        <file>images/idler.png</file>
     </qresource>
 </RCC>

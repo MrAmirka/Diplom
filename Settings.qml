@@ -4,8 +4,8 @@ import QtGraphicalEffects 1.0
 
 
 Item{
-    width: 563
-    height: 1000
+    height: propHeight
+    width:propWidth
     Image {
         x:0
         y:0
@@ -147,7 +147,7 @@ Item{
         y: parent.height*0.453
         //x:parent.width*0.076
         //y:parent.height/9
-        text: "Геоданные"
+        text: "NFC"
         font.family: roboto.name
         font.pointSize: 15
 
