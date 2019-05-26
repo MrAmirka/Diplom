@@ -40,10 +40,6 @@ Item {
                 id: mouseSet
                 y: 2
                 width: 40
-                anchors.rightMargin: 0
-                anchors.bottomMargin: 0
-                anchors.leftMargin: 0
-                anchors.topMargin: 0
                 anchors.fill: parent
 
                 onClicked: {mainStack.push("Settings.qml")}
@@ -192,20 +188,17 @@ Item {
         }
         Image {
             id: fifth
-            x: 523
+            x: 517
             y: 0
-            width: 40
-            height: 40
+            width: 30
+            height: 30
             source: "images/profile.png"
 
             MouseArea{
                 id: mouseProf
+                x: 0
                 y: 2
                 width: 40
-                anchors.rightMargin: 0
-                anchors.bottomMargin: 0
-                anchors.leftMargin: 0
-                anchors.topMargin: 0
                 anchors.fill: parent
 
                 onClicked: {mainStack.push("Authorised.qml")}
@@ -215,7 +208,7 @@ Item {
 
                 Text {
                     id: tFifth
-                    x: -23
+                    x: -11
                     y: 31
                     width: 59
                     height: 12

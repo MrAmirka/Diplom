@@ -31,5 +31,6 @@
         <file>AssemblyShop.qml</file>
         <file>Doc.qml</file>
         <file>images/idler.png</file>
+        <file>images/getback.png</file>
     </qresource>
 </RCC>
